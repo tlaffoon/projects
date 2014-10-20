@@ -13,17 +13,15 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('ItemsTableSeeder');
 	}
-
 }
 
 class ItemsTableSeeder extends Seeder {
 
-	$item = new Item();
-	$item->item = 'test item';
-	$item->save();
+	public function run() {
+		DB::table('items')->delete();
+
+		$item = new Item();
+		$item->name = 'test item';
+		$item->save();
+	}
 }
-
-// class AddressTableSeeder extends Seeder {
-
-// 	$person = new Person();
-// }
