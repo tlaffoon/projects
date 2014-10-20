@@ -2,7 +2,7 @@
 
 class Item extends Eloquent {
     
-    protected table = $items;
+    protected $table = 'items';
 
     // rules for validation on item creation
     
