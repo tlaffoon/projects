@@ -84,7 +84,7 @@
         <div class="row">
             <div class="col-md-3 img-rounded sidebar bordered">
                 <ul>
-                    <li>Todo List</li>
+                    <li><a href="/todo_list">Todo List</a></li>
                     <li>Address Book</li>
                     <li>Time Tracker</li>
                     <li>Hangman</li>
@@ -111,7 +111,10 @@
 
     <script type="text/javascript">
         /* Set class img-rounded on all li in sidebar */
-        $('li').addClass('img-rounded');
+        $('li').addClass('img-rounded', 'btn btn-default');
     </script>
+
+    @yield('bottomscript')
+
   </body>
 </html>
