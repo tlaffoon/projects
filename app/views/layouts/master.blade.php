@@ -28,7 +28,7 @@
 
         .sidebar {
             height: 700px;
-            font-size: 18px;
+            font-size: 20px;
             background-color: white;
         }
 
@@ -45,9 +45,13 @@
             right: 20px;
         }
 
+        .sidebar>ul>li>a {
+            text-decoration: none;
+        }
+
         .main-content {
             height: 700px;
-            font-size: 18px;
+            /*font-size: 18px;*/
             background-color: white;
         }
 
