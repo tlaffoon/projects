@@ -9,7 +9,6 @@ class ItemsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
 		$items = Item::all();
 		return View::make('items.index')->with('items', $items);
 	}
@@ -22,7 +21,7 @@ class ItemsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return Redirect::action('ItemsController@index');
 	}
 
 
@@ -33,7 +32,11 @@ class ItemsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$item = new Item();
+		$item->name = Input::get('new-item');
+		$item->save();
+
+		return Redirect::action('ItemsController@index');
 	}
 
 
@@ -45,7 +48,9 @@ class ItemsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		// $items = Item::findOrFail($id);
+		//return View::make('items.index')->with('items', $items);
+		return Redirect::action('ItemsController@index');
 	}
 
 
@@ -81,8 +86,9 @@ class ItemsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$item = Item::find($id);
+		$item->delete();
+
+		return Redirect::action('ItemsController@index');
 	}
-
-
 }
