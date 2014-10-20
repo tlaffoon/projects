@@ -16,8 +16,10 @@ Route::get('/', function()
 	return View::make('layouts.master');
 });
 
-Route::get('/todo', function() 
-{
-    return View::make('todo');
-});
+// Route::get('/todo_list', function() 
+// {
+//     return View::make('todo.index');
+// });
+
+Route::resource('items','ItemsController');
 
