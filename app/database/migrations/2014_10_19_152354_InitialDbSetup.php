@@ -16,7 +16,7 @@ class InitialDbSetup extends Migration {
 		Schema::create('items', function($table)
 		{
 		    $table->increments('id');
-		    $table->string('item');
+		    $table->string('name');
 		    $table->timestamps();
 		});
 	}
